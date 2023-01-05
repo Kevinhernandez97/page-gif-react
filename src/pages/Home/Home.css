@@ -1,0 +1,28 @@
+.listGif {
+    margin: 50px 0 0 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .listGif a {
+    text-align: start;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(163, 199, 164);
+    height: 50px;
+  }
+
+  .subTitle {
+    text-align: start;
+    color: rgb(45, 180, 52);
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li a:hover {
+    color: rgba(138, 91, 184, 0.438);
+  }
