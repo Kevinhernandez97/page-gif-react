@@ -10,6 +10,11 @@ import "./Home.css";const POPULAR_GIFS = [
   "Annita",
   "Badbunny",
   "Coding",
+  "Rosado",
+  "Comida",
+  "Futbol",
+  "Instagram",
+  "Bicicletas",
 ];
 
 function Home() {
