@@ -21,13 +21,13 @@ const POPULAR_GIFS = [
 ];
 
 function Home() {
-  const {loading, gifs} = useGifs();
+  const { loading, gifs } = useGifs();
 
   return (
     <div className="listGif">
       <Input />
       <h3>Ultima búsqueda</h3>
-      <ListOfGifs gifs={gifs}/>
+      <ListOfGifs gifs={gifs} />
       <h2 className="subTitle">Most popular</h2>
       <ul>
         {POPULAR_GIFS.map((popularGif) => (
