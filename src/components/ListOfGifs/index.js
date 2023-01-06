@@ -1,5 +1,5 @@
-import { Gif } from '../Gifs'
-import "./ListOfGifs.css"
+import { Gif } from "../Gifs";
+import "./ListOfGifs.css";
 
 function ListOfGifs({ gifs }) {
   return (
