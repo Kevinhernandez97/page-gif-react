@@ -1,7 +1,7 @@
-const apiKey = "dIJrma20pSU6ymMwWnDbiaT7NFHeAGVa";
+import { API_KEY, API_URL } from "../settings";
 
-function getGifs({ keyword = "harry potter" } = {}) {
-  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=10&offset=0&rating=G&lang=en`;
+function getGifs({limit = 25, keyword = "harry potter" } = {}) {
+  const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=0&rating=G&lang=en`;
   return fetch(apiURL)
     .then((res) => res.json())
     .then((response) => {
