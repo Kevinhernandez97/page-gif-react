@@ -4,10 +4,15 @@
 
 .ListOfGifs {
     max-width: 100%;
-    column-count: var(--results-columns);
-    column-gap: .5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
 }
-
+.ListOfGifs img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
 .ListOfGifs-item {
     width: 100%;
     -webkit-column-break-inside: avoid;
