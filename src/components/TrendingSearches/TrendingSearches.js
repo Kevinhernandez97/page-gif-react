@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getTrendingTerms } from "../../services/getTrendingTermsServices";
 import { Category } from "../Category";
 
-function TrendingSearches () {
+export default function TrendingSearches () {
     const [trends, setTrends] = useState([])
 
     useEffect(function () {
@@ -17,4 +17,4 @@ function TrendingSearches () {
     )
 }
 
-export { TrendingSearches }
+// export { TrendingSearches }

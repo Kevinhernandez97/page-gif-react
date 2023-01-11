@@ -1,12 +1,11 @@
 import React, {Suspense} from "react";
 import { useNearScreen } from "../hooks/useNearScrenn";
-// import { TrendingSearches } from "./TrendingSearches"
 
 const TrendingSearches = React.lazy(
     () => import('./TrendingSearches')
 )
 
-export default function LazyTrading () {
+function LazyTrading () {
     const {isNearScreen, fromRef} = useNearScreen({ distance: '200px' })
 
     return <div ref={fromRef}>
@@ -16,4 +15,4 @@ export default function LazyTrading () {
     </div>
 }
 
-// export { LazyTrading } 
+export { LazyTrading } 
