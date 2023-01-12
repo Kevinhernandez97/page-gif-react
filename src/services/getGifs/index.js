@@ -1,7 +1,7 @@
 import { API_KEY, API_URL } from "../settings";
 
-function getGifs({limit = 25, keyword = "harry potter" } = {}) {
-  const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=0&rating=G&lang=en`;
+function getGifs({limit = 25, keyword = "harry potter", page = 0} = {}) {
+  const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page * limit}&rating=G&lang=en`;
   return fetch(apiURL)
     .then((res) => res.json())
     .then((response) => {
