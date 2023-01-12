@@ -1,9 +1,7 @@
 .listGif {
   width: calc(100% - 50px);
-  margin: 50px 0 0 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .listGif a {
   text-align: start;
@@ -91,6 +89,7 @@ ul {
   width: 54px;
   margin: auto;
 }
+
 @media screen and (min-width: 300px) and (max-width: 796px) {
   .form {
     border-radius: 20px;

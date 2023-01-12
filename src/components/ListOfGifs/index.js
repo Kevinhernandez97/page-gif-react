@@ -6,7 +6,7 @@ function ListOfGifs({ gifs }) {
     <div className="ListOfGifs">
       {gifs.map(({ id, title, url }) => (
         <Gif id={id} key={id} title={title} url={url} />
-      ))}
+        ))}
     </div>
   );
 }

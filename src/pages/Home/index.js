@@ -12,9 +12,7 @@ function Home() {
       <Input />
       <h3>Ultima búsqueda</h3>
       <ListOfGifs gifs={gifs} />
-      <div>
-        <LazyTrading />
-      </div>
+      <LazyTrading />
     </div>
   );
 }

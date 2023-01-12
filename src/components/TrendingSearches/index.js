@@ -9,7 +9,7 @@ const TrendingSearches = React.lazy(
 function LazyTrading () {
     const {isNearScreen, fromRef} = useNearScreen({ distance: '200px' })
 
-    return <div ref={fromRef}>
+    return <div style={{width: "100%"}} className="container-list-tendencias" ref={fromRef}>
         <Suspense fallback={<Spinner />}>
             {isNearScreen ? <TrendingSearches /> : <Spinner />}
         </Suspense>
