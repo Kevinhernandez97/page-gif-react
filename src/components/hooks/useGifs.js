@@ -11,7 +11,7 @@ function useGifs({ keyword } = { keyword: null }) {
   const [page, setPage] = useState(INITIAL_PAGE)
   const { gifs, setGifs } = useContext(Context1);
 
-  const keywordToUse = keyword || localStorage.getItem("lastKeyword") || "random";
+  const keywordToUse = keyword || localStorage.getItem("lastKeyword") || "shakira";
   
   useEffect(function () {
       setLoading(true);
