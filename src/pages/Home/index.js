@@ -1,4 +1,4 @@
-import { Input } from "../../components/Input";
+import Input from "../../components/Input";
 import "./Home.css";
 import { ListOfGifs } from "../../components/ListOfGifs";
 import { useGifs } from "../../components/hooks/useGifs";

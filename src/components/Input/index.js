@@ -1,17 +1,17 @@
-import { useState } from "react";
+import React, {useState} from "react";
 import { useLocation } from "wouter";
 
 function Input() {
   const [keyword, setKeyword] = useState("");
   const [path, pushLocation] = useLocation();
 
+  const handleChange = (evt) => {
+    setKeyword(evt.target.value);
+  };
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     pushLocation(`/search/${keyword}`);
-  };
-
-  const handleChange = (evt) => {
-    setKeyword(evt.target.value);
   };
 
   return (
@@ -37,4 +37,4 @@ function Input() {
   );
 }
 
-export { Input };
+export default React.memo(Input);
