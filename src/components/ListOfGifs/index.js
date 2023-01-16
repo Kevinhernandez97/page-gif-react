@@ -1,4 +1,4 @@
-import { Gif } from "../Gifs";
+import Gif from "../Gifs";
 import "./ListOfGifs.css";
 
 function ListOfGifs({ gifs }) {

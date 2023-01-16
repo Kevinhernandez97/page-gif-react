@@ -1,5 +1,5 @@
 import React from "react";
-import { Gif } from "../../components/Gifs";
+import Gif from "../../components/Gifs";
 import { useGlobalGifs } from "../../components/hooks/useGlobalGifs";
 
 function Detail({ params }) {
