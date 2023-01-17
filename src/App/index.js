@@ -17,7 +17,7 @@ function App() {
       <div className="App">
         <section className="App-content">
           <Link to="/">
-            <h1 className="title">GIF's</h1>
+            <h1 className="title">giffy</h1>
           </Link>
           <GifsContextProvider>
             <Route component={Home} path="/" />
