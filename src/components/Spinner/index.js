@@ -1,5 +1,12 @@
-function Spinner() {
-  return <i>loading...</i>;
-}
+import './spinner.css'
 
-export { Spinner };
+export default function Spinner() {
+  return (
+    <div className="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    ) 
+}

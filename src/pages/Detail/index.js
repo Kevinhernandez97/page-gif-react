@@ -1,12 +1,13 @@
 import React from "react";
 import Gif from "../../components/Gifs";
-import { useGlobalGifs } from "../../components/hooks/useGlobalGifs";
+import useSingleGif from "../../components/hooks/useSingleGif";
+import Spinner from "../../components/Spinner";
 
-function Detail({ params }) {
-  const { gifs } = useGlobalGifs();
+export default function Detail({ params }) {
+  const {gif, isLoading, isError} = useSingleGif({id: params.id})
 
-  const gif = gifs.find((singleGif) => singleGif.id === params.id);
+  if (isLoading) return <Spinner />
+  if (!gif) return null
+
   return <Gif {...gif} />;
 }
-
-export { Detail };

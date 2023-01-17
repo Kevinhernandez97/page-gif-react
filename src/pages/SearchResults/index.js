@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback } from "react";
 import debounce from "just-debounce-it";
-import { Spinner } from "../../components/Spinner";
+import Spinner from "../../components/Spinner";
 import { ListOfGifs } from "../../components/ListOfGifs";
 import { useGifs } from "../../components/hooks/useGifs";
 import { useNearScreen } from "../../components/hooks/useNearScrenn"

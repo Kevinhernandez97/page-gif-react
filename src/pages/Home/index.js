@@ -5,7 +5,7 @@ import { useGifs } from "../../components/hooks/useGifs";
 import { LazyTrading } from "../../components/TrendingSearches";
 
 function Home() {
-  const { loading, gifs } = useGifs();
+  const { gifs } = useGifs();
 
   return (
     <div className="listGif">

@@ -2,7 +2,7 @@ import "./App.css";
 import { Link, Route } from "wouter";
 import { SearchResults } from "../pages/SearchResults";
 import { Home } from "../pages/Home";
-import { Detail } from "../pages/Detail";
+import Detail from "../pages/Detail";
 import { Context } from "../context/StaticContext";
 import { GifsContextProvider } from "../context/GifsContext";
 
