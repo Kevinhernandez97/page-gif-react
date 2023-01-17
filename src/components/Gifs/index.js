@@ -4,9 +4,11 @@ import { Link } from "wouter";
 
 function Gif({ title, url, id }) {
   return (
-    <Link to={`/gif/${id}`} className="Gif">
-      <img src={url} alt={title} />
-    </Link>
+    <picture className="container-listOfGifs">
+      <Link to={`/gif/${id}`} className="Gif">
+        <img src={url} alt={title} />
+      </Link>
+    </picture>
   );
 }
 
