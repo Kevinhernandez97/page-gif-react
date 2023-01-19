@@ -4,6 +4,7 @@ import Spinner from "../../components/Spinner";
 import { ListOfGifs } from "../../components/ListOfGifs";
 import { useGifs } from "../../components/hooks/useGifs";
 import { useNearScreen } from "../../components/hooks/useNearScrenn"
+import useSEO from "../../components/hooks/useSEO";
 
 function SearchResults({ params }) {
   const { keyword } = params;
@@ -13,6 +14,8 @@ function SearchResults({ params }) {
   externalRef:   loading ? null : externalRef,
   once: false
   })
+  const title = gifs ? `${gifs.length} Resultados de ${keyword}` : ''
+  useSEO({ title })
 
   const debounceHandleNextPage = useCallback(debounce(
     () => setPage(prevPage => prevPage + 1), 200
