@@ -46,3 +46,4 @@ function SearchResults({ params }) {
 }
 
 export { SearchResults };
+
