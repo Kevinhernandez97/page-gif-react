@@ -5,4 +5,4 @@ const Context = React.createContext({
   suscribeteAlCanal: true,
 });
 
-export { Context };
+export default Context

@@ -1,10 +1,24 @@
-import React, {useState} from "react";
+import React, {useReducer, useState} from "react";
 import { useLocation } from "wouter";
 import './input.css';
 
-function Input() {
-  const [keyword, setKeyword] = useState("");
-  const [path, pushLocation] = useLocation();
+const RATINGS = ['g', 'pg', 'pg-13', 'r']
+
+const reducer = (state, param) => {
+  return state
+}
+
+function Input({ initialKeyword = '', initialRating = 'g'}) {
+
+  const [keyword, setKeyword] = useState(decodeURIComponent(initialKeyword))
+  const [path, pushLocation] = useLocation()
+  const [rating, setRating] = useState(initialRating)
+
+  const [state, dispatch] = useReducer(reducer, {
+    kewyword: decodeURIComponent(initialKeyword),
+    rating: initialRating
+  })
+
 
   const handleChange = (evt) => {
     setKeyword(evt.target.value);
@@ -12,8 +26,12 @@ function Input() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    pushLocation(`/search/${keyword}`);
+    pushLocation(`/search/${keyword}/${rating}`);
   };
+
+  const handleChangeRating = (evt) => {
+    setRating(evt.target.value)
+  }
 
   return (
     <form onSubmit={handleSubmit} className="form">
@@ -30,9 +48,14 @@ function Input() {
           placeholder="Search a gif here..."
           value={keyword}
         />
-        <input type="hidden" />
+        <select onChange={handleChangeRating} value={rating}>
+          <option disabled>Rating type</option>
+          {RATINGS.map(rating => (
+            <option key={rating}>{rating}</option>
+            ))}
+        </select>
       </div>
-    </form>
+      </form>
   );
 }
 

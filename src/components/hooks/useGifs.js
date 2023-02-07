@@ -1,41 +1,43 @@
-import { getGifs } from "../../services/getGifs";
-import { useContext, useState, useEffect } from "react";
-import { Context1 } from "../../context/GifsContext";
+import { getGifs } from "../../services/getGifs"
+import { useContext, useState, useEffect } from "react"
+import  Context  from "../../context/GifsContext"
 
 const INITIAL_PAGE = 0
 
 
-function useGifs({ keyword } = { keyword: null }) {
-  const [loading, setLoading] = useState(false);
+function useGifs({ keyword, rating } = { keyword : ''}) {
+  const [loading, setLoading] = useState(false)
   const [loadingNextPage, setLoadingNextPage] = useState(false)
+
   const [page, setPage] = useState(INITIAL_PAGE)
-  const { gifs, setGifs } = useContext(Context1);
+  const { gifs, setGifs } = useContext(Context)
 
-  const keywordToUse = keyword || localStorage.getItem("lastKeyword") || "shakira";
-  
+   const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'sahkira'
+
   useEffect(function () {
-      setLoading(true);
+      setLoading(true)
 
-      getGifs({ keyword: keywordToUse }).then((gifs) => {
-        setGifs(gifs);
-        setLoading(false);
-        localStorage.setItem("lastKeyword", keyword);
-      });
-    }, [keyword, keywordToUse,setGifs]);
+      getGifs({ keyword: keywordToUse, rating })
+      .then((gifs) => {
+        setGifs(gifs)
+        setLoading(false)
+        localStorage.setItem('lastKeyword', keyword)
+      })
+    }, [keyword, keywordToUse, rating, setGifs])
 
     useEffect(function () {
       if (page === INITIAL_PAGE) return 
 
       setLoadingNextPage(true)
 
-      getGifs({ keyword: keywordToUse, page })
+      getGifs({ keyword: keywordToUse, rating, page })
       .then(nextGifs => {
         setGifs(prevGifs => prevGifs.concat(nextGifs))
         setLoadingNextPage(false)
       })
-    }, [keywordToUse, page, setGifs])
+    }, [keywordToUse, page, rating, setGifs])
 
-  return { loading, loadingNextPage, gifs, setPage };
+  return { loading, loadingNextPage, gifs, setPage }
 }
 
-export { useGifs };
+export { useGifs }

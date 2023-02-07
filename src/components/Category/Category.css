@@ -21,6 +21,6 @@ margin: 0 auto;
     font-size: 1.3rem;
     transition: color 0.1s ease-in 0s;
     font-family: 'Manrope', sans-serif;
-
+    cursor: pointer;
 }
 
